@@ -1,5 +1,4 @@
-# heroku
-REST api 
+
 the app runs on process.env.port or on port 3000.
 To run the app use  command node app.
 app.js is the start part of the app containing all the middleware code.
