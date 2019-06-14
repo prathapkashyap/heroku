@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <% include ./navbar.ejs %>
+    <form action="/api/change/user" method="POST" class="container">
+        Edit user Info
+        <br>
+        Enter Mongo_id:<input type="text" name="_id" >
+        username:<input type="text" id="username" name="name">
+        Phone Number:<input type="text" id="username" name="phone_number">
+        email:<input type="text" id="username" name="email">
+        address:<input type="text" id="username" name="address">
+        interests:<input type="text" id="interests" name="interests">
+        <button type="submit" class="btn blue" >Submit </button>
+
+    </form>
+    
+    <br>
+    <form action="/api/delete/user" method="POST" class="container">
+        Delete a user from database
+        <br>
+       Enter Mongo_id: <input type="text" name="_id">
+        <button type="submit" class="btn blue">Submit</button>
+    </form>
+    
+</body>
+</html>

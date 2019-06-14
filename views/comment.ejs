@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script type="text/javascript" src="axios.js"></script> -->
+</head>
+<body>
+        <% include ./navbar.ejs %>
+<!--        
+         //<script type="text/javascript" src="../axios.js"></script> -->
+
+    <form action="/api/user/comment" method="POST" class="container">
+       From user: <input type="text" name="from_user">
+       To user:<input type="text" name="to_user">
+       comment: <input type="text" name="comment">
+       <button type="submit" class="btn blue"> submit</button>
+    </form>
+
+    <br>
+    <div class="container">
+    Enter a user name to retrieve all the comments
+    
+        <input type="text"  name="name" id="get_com_name">
+        <button onclick="getcomment()" id="get_com_btn" class="btn blue">submit</button>
+    
+        <script>
+            function getcomment(){
+                var url='http://localhost:4000/api/user/comment/'+document.getElementById('get_com_name').value;
+                window.location.href=url;
+                fetch(url).then(function(res){
+                    console.log(res)
+                    });
+            }
+        </script>
+    </div>
+</body>
+</html>
